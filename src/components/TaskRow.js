@@ -1,6 +1,10 @@
+import { Subtask } from "./Subtask";
+
+export const TaskRow = ({ task,toggleTask, toggleSubtask }) => {
+
+    const subtasks = task.subtasks;
 
 
-export const TaskRow = ({ task,toggleTask }) => {
     return (
         <tr>
             <td>
@@ -10,6 +14,7 @@ export const TaskRow = ({ task,toggleTask }) => {
                     onChange={() => toggleTask(task)}
                 />
             </td>
+            <Subtask subtasks={subtasks} key={subtasks.name} toggleSubtask={toggleSubtask} />
         </tr>
     )
 }
